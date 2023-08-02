@@ -22,11 +22,6 @@ saveInfoBtn.addEventListener("click", () => {
   const newFirstName = firstName.value.trim();
   const newLastName = lastName.value.trim();
 
-  // Find the current user's data in allUsersData
-  const currentUserPrevData = allUsersData.find((user) => {
-    return user.firstName === newFirstName && user.lastName === newLastName;
-  });
-
   if (userData) {
     // Update the firstName and lastName in userData if they are different
     if (newFirstName !== userData.firstName) userData.firstName = newFirstName;
@@ -35,26 +30,20 @@ saveInfoBtn.addEventListener("click", () => {
     // Save updated userData in sessionStorage
     sessionStorage.setItem("loggedInUser", JSON.stringify(userData));
 
-    // Create an updated user object to push to allUsersData
-    const updatedUserObj = {
-      firstName: newFirstName,
-      lastName: newLastName,
-      email: currentUserPrevData.email,
-      password: currentUserPrevData.password,
-    };
+    // Find the current user's data in allUsersData and update it
+    const currentUserIndex = allUsersData.findIndex((user) => {
+      return user.email === userData.email; // Use a unique identifier like email for finding the user
+    });
 
-    // Remove the current user's data from allUsersData
-    const indexToRemove = allUsersData.indexOf(currentUserPrevData);
-    if (indexToRemove !== -1) {
-      allUsersData.splice(indexToRemove, 1);
+    if (currentUserIndex !== -1) {
+      // Update the user's data in allUsersData
+      allUsersData[currentUserIndex].firstName = newFirstName;
+      allUsersData[currentUserIndex].lastName = newLastName;
+
+      // Save updated allUsersData to localStorage
+      localStorage.setItem("usersArray", JSON.stringify(allUsersData));
+      alert("Your data is successfully saved");
     }
-
-    // Push the updated user object to allUsersData
-    allUsersData.push(updatedUserObj);
-
-    // Save updated allUsersData to localStorage
-    localStorage.setItem("usersArray", JSON.stringify(allUsersData));
-    alert("Your data is successfully saved");
   }
 });
 
@@ -69,31 +58,24 @@ changePasswordBtn.addEventListener("click", () => {
         if (newPassword.value.trim() === confirmPassword.value.trim()) {
           // Update the user's password in userData
           userData.password = newPassword.value.trim();
+          userData.confirmPassword = confirmPassword.value.trim();
 
           // Save updated userData in sessionStorage
           sessionStorage.setItem("loggedInUser", JSON.stringify(userData));
 
-          // Create an updated user object to push to allUsersData
-          const updatedUserObj = {
-            firstName: currentUserPrevData.firstName,
-            lastName: currentUserPrevData.lastName,
-            email: currentUserPrevData.email,
-            password: newPassword.value.trim(),
-            confirmPassword: newPassword.value.trim(),
-          };
+          // Find the current user's data in allUsersData and update it
+          const currentUserIndex = allUsersData.findIndex((user) => {
+            return user.email === userData.email; // Use a unique identifier like email for finding the user
+          });
 
-          // Remove the current user's data from allUsersData
-          const indexToRemove = allUsersData.indexOf(currentUserPrevData);
-          if (indexToRemove !== -1) {
-            allUsersData.splice(indexToRemove, 1);
+          if (currentUserIndex !== -1) {
+            // Update the user's password in allUsersData
+            allUsersData[currentUserIndex].password = newPassword.value.trim();
+
+            // Save updated allUsersData to localStorage
+            localStorage.setItem("usersArray", JSON.stringify(allUsersData));
+            alert("Your password is successfully updated");
           }
-
-          // Push the updated user object to allUsersData
-          allUsersData.push(updatedUserObj);
-
-          // Save updated allUsersData to localStorage
-          localStorage.setItem("usersArray", JSON.stringify(allUsersData));
-          alert("Your password is successfully updated");
         } else {
           alert("Confirm password does not match with the new password");
         }
