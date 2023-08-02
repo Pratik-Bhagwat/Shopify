@@ -76,6 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "https://cdn-icons-png.flaticon.com/128/891/891419.png",
       handler: function () {
         // run a function when your payment is successful
+        // Clear the cartItems from local storage
+        localStorage.removeItem("cartItems");
         location.href = "../shopPage/"; // Redirect to the shop page after successful payment
       },
       options: {
