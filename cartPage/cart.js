@@ -1,5 +1,10 @@
 const itemsDiv = document.querySelector(".items");
 localStorage.setItem("cartItemsDiv", JSON.stringify(itemsDiv));
+const shopifyLogo = document.querySelector(".nav-left");
+
+shopifyLogo.addEventListener("click", () => {
+  location.href = "../shopPage/";
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];

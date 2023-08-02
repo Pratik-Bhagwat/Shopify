@@ -4,6 +4,11 @@ const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirmPassword");
 const signupBtn = document.querySelector("#signupBtn");
+const shopifyLogo = document.querySelector(".nav-left");
+
+shopifyLogo.addEventListener("click", () => {
+  location.href = "./index.html";
+});
 
 function saveUser(firstName, lastName, email, password, confirmPassword) {
   const userObj = {

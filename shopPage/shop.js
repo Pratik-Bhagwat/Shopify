@@ -4,6 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const sizeArray = ["S", "M", "L", "XL"];
   const productArray = [];
   const cartItemsDiv = JSON.parse(localStorage.getItem("cartItemsDiv"));
+  const shopifyLogo = document.querySelector(".nav-left");
+
+  shopifyLogo.addEventListener("click", () => {
+    location.href = "../shopPage/";
+  });
 
   // Fetch Functions
   async function getAllData() {
