@@ -2,9 +2,12 @@
 const userData = JSON.parse(sessionStorage.getItem("loggedInUser"));
 const allUsersData = JSON.parse(localStorage.getItem("usersArray"));
 
+console.log(userData);
+console.log(allUsersData);
+
 // Get references to the input fields and buttons
-const firstName = document.querySelector(".firstName");
-const lastName = document.querySelector(".lastName");
+const firstName = document.querySelector("#firstName");
+const lastName = document.querySelector("#lastName");
 const saveInfoBtn = document.querySelector("#saveBtn");
 const oldPassword = document.querySelector("#oldPassword");
 const newPassword = document.querySelector("#newPassword");
@@ -17,6 +20,8 @@ if (userData) {
   lastName.value = userData.lastName;
 }
 
+console.log(firstName.value);
+console.log(lastName.value);
 // Save info button click event handler
 saveInfoBtn.addEventListener("click", () => {
   const newFirstName = firstName.value.trim();
