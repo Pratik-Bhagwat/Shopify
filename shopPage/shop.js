@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>${obj.title}</p>
         </div>
         <div class="price-size">
-          <span>${obj.price}</span>
+          <span>$${obj.price}</span>
           <span>${obj.size}</span>
         </div>
         <p class="colors">Colors : <span>${obj.color}</span></p>
@@ -372,3 +372,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+console.log(productArray);

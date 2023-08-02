@@ -38,7 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let totalAmount = 0;
 
   function calculateTotalPrice(price) {
-    totalAmount += Number(price);
+    let amount = price.split("$");
+    totalAmount += Number(amount[1]);
   }
 
   for (let item of cartItems) {
