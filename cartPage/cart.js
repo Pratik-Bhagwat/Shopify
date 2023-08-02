@@ -55,11 +55,12 @@ document.addEventListener("DOMContentLoaded", () => {
     checkListPart2Div.insertAdjacentElement("afterbegin", itemNamePriceDiv);
   }
   totalAmountSpan.textContent = `$${totalAmount}`;
+  let finalAmountToShow = totalAmount * 82 * 100;
 
   checkOutBtn.addEventListener("click", (event) => {
     const options = {
       key: "rzp_test_xV39ZNbgU1Du4V", // Enter the Key ID generated from the Dashboard
-      amount: totalAmount * 82 * 100, //check this out if this is paisa or INR // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      amount: finalAmountToShow, //check this out if this is paisa or INR // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       currency: "INR",
       name: "Shopify",
       description: "This is your order", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
