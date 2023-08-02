@@ -1,6 +1,7 @@
 // Retrieve user data from sessionStorage and allUsersData from localStorage
 const userData = JSON.parse(sessionStorage.getItem("loggedInUser"));
 const allUsersData = JSON.parse(localStorage.getItem("usersArray"));
+console.log(userData);
 
 // Get references to the input fields and buttons
 const firstName = document.querySelector(".firstName");
