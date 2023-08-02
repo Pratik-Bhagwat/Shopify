@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "https://cdn-icons-png.flaticon.com/128/891/891419.png",
       handler: function () {
         // run a function when your payment is successfull
-        location.href = "../shopPage";
+        location.href = "../shopPage/";
       },
       options: {
         checkout: {
