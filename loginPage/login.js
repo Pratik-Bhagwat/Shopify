@@ -23,7 +23,7 @@ loginBtn.addEventListener("click", (event) => {
         // then we will check if the password is matching or not.
         if (currentUser.password === password.value.trim()) {
           sessionStorage.setItem("loggedInUser", JSON.stringify(currentUser));
-          window.location.href = "../shopPage/shop.html";
+          window.location.href = "../shopPage";
           alert("logged in successfully");
         }
 

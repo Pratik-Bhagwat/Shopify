@@ -91,7 +91,7 @@ signupBtn.addEventListener("click", (event) => {
           confirmPassword.value
         );
         alert("User sucessfully signed up");
-        window.location.href = "/loginPage/login.html";
+        window.location.href = "../loginPage";
       }
     }
   }
