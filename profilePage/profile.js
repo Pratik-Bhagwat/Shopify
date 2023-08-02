@@ -10,6 +10,7 @@ const oldPassword = document.querySelector("#oldPassword");
 const newPassword = document.querySelector("#newPassword");
 const confirmPassword = document.querySelector("#confirmPassword");
 const changePasswordBtn = document.querySelector("#changePassword");
+const logoutBtn = document.querySelector("#logoutBtn");
 
 // Display user data if available in sessionStorage
 if (userData) {
@@ -71,6 +72,8 @@ changePasswordBtn.addEventListener("click", () => {
           if (currentUserIndex !== -1) {
             // Update the user's password in allUsersData
             allUsersData[currentUserIndex].password = newPassword.value.trim();
+            allUsersData[currentUserIndex].confirmPassword =
+              newPassword.value.trim();
 
             // Save updated allUsersData to localStorage
             localStorage.setItem("usersArray", JSON.stringify(allUsersData));
@@ -86,4 +89,9 @@ changePasswordBtn.addEventListener("click", () => {
       alert("Old password is wrong!!");
     }
   }
+});
+
+// Logout btn click event function
+logoutBtn.addEventListener("click", () => {
+  window.location.href = "../index.html";
 });
