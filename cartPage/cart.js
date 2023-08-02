@@ -56,14 +56,15 @@ document.addEventListener("DOMContentLoaded", () => {
     checkListPart2Div.insertAdjacentElement("afterbegin", itemNamePriceDiv);
   }
 
-  totalAmountSpan.textContent = `${totalAmount}`;
+  totalAmountSpan.textContent = `$${totalAmount}`;
+  totalAmount *= 100;
 
   // Event listener for the checkout button
   checkOutBtn.addEventListener("click", (event) => {
     // Configure the options for Razorpay payment
     const options = {
       key: "rzp_test_xV39ZNbgU1Du4V", // Enter the Key ID generated from the Dashboard
-      amount: totalAmount * 100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      amount: totalAmount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       currency: "INR",
       name: "Shopify",
       description: "This is your order",
