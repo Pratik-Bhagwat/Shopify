@@ -38,8 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let totalAmount = 0;
 
   function calculateTotalPrice(price) {
-    let amount = price.split("$");
-    totalAmount += Number(amount[1]);
+    totalAmount += Number(price);
   }
 
   for (let item of cartItems) {
@@ -56,10 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
     checkListPart2Div.insertAdjacentElement("afterbegin", itemNamePriceDiv);
   }
 
-  totalAmountSpan.textContent = `$${totalAmount}`;
+  totalAmountSpan.textContent = `${totalAmount}`;
 
-  // Calculate the final amount to show in Razorpay payment (assuming 82 INR = 1 unit)
-  let finalAmountToShow = totalAmount * 82 * 100;
+  // Calculate the final amount to show in Razorpay payment
+  let finalAmountToShow = totalAmount * 100;
 
   // Event listener for the checkout button
   checkOutBtn.addEventListener("click", (event) => {
