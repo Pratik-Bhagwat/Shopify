@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cart.css" />
+    <title>MyCart</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav>
+        <div class="nav-left">Shopify</div>
+        <div class="nav-right">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../loginPage/login.html">Login</a></li>
+            <li><a href="../signupPage/signup.html">Signup</a></li>
+            <li><a href="#">MyCart</a></li>
+            <li><a href="#">Profile</a></li>
+          </ul>
+        </div>
+      </nav>
+      <main>
+        <div class="content">
+          <div class="part1">
+            <h1>My Cart</h1>
+          </div>
+          <div class="part2">
+            <div class="cart-items">
+              <div class="items">
+                <div class="item">
+                  <div class="item-content">
+                    <img
+                      src="https://5.imimg.com/data5/VH/BL/PA/SELLER-96763193/fond-of-mens-cotton-shirts.jpg"
+                      alt="img"
+                    />
+                    <div class="item-info">
+                      <div class="title">
+                        <p>Blue Mens Shirt</p>
+                      </div>
+                      <div class="price-size">
+                        <span>$100</span>
+                        <span>M</span>
+                      </div>
+                      <p class="colors">Colors : <span>red</span></p>
+                      <p class="ratings">Rating : 4.1</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="checkList">
+              <div class="checkList-content">
+                <div class="cl-part1">
+                  <h4>Checkout List</h4>
+                </div>
+                <div class="cl-part2">
+                  <div class="total">
+                    <span>Total</span>
+                    <span class="totalAmount">Rs 900/-</span>
+                  </div>
+                </div>
+                <div class="cl-part3">
+                  <button id="checkoutBtn">Click to Checkout</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>

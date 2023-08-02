@@ -1,0 +1,100 @@
+@import url("variables.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+.wrapper {
+  height: 100%;
+  width: 100%;
+  background-color: #e3e3e3;
+  position: relative;
+}
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  background-color: #212121;
+  height: 10vh;
+  color: white;
+  z-index: 99;
+}
+.nav-left {
+  font-family: var(--karla);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.nav-left:hover {
+  cursor: pointer;
+}
+.nav-right ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+.nav-right ul li a {
+  text-decoration: none;
+  font-family: var(--incon);
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: white;
+}
+
+main {
+  margin-top: 10vh;
+  height: calc(100% - 10vh);
+  display: flex;
+  padding: 3rem;
+}
+.main-left h1 {
+  font-family: var(--karla);
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+.main-left p {
+  font-family: var(--incon);
+  width: 70%;
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
+}
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+}
+.login-btn {
+  border: none;
+  background-color: #85a4ca;
+  font-family: var(--incon);
+  font-size: 1.3rem;
+  padding: 0.5rem 2rem;
+  border-radius: 0.8rem;
+}
+.signup-btn {
+  border: none;
+  background-color: #f95959;
+  font-family: var(--incon);
+  font-size: 1.3rem;
+  padding: 0.5rem 2rem;
+  border-radius: 0.8rem;
+}
+.login-btn:hover {
+  cursor: pointer;
+}
+.signup-btn:hover {
+  cursor: pointer;
+}
+.main-right img {
+  height: 30rem;
+  border-radius: 1.8rem;
+}

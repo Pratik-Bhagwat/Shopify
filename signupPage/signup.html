@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./signup.css" />
+    <title>Sign up</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav>
+        <div class="nav-left">Shopify</div>
+        <div class="nav-right">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../loginPage/login.html">Login</a></li>
+            <li><a href="#">Signup</a></li>
+            <li><a href="../cartPage/cart.html">MyCart</a></li>
+            <li><a href="#">Profile</a></li>
+          </ul>
+        </div>
+      </nav>
+      <main>
+        <div class="container">
+          <div class="headings">
+            <h3>User Signup</h3>
+            <p>Hey,Enter your details to get signup into our website</p>
+          </div>
+          <div class="inputs">
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              placeholder="Your First Name"
+            />
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              placeholder="Your Last Name"
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter Email"
+            />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter your password"
+            />
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              placeholder="Confirm your password"
+            />
+            <button type="submit" id="signupBtn">Signup</button>
+          </div>
+          <p>
+            Already have an account?
+            <a href="../loginPage/login.html">Login Now</a>
+          </p>
+        </div>
+      </main>
+    </div>
+    <script src="signup.js"></script>
+  </body>
+</html>
