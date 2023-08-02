@@ -197,6 +197,7 @@ main {
   border-radius: 0.8rem;
   overflow: hidden;
   width: 100%;
+  background-color: #e3f6f5;
 }
 .item img {
   width: 100%;

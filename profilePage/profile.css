@@ -1,4 +1,4 @@
-@import url("variables.css");
+@import url("../variables.css");
 
 * {
   margin: 0;
@@ -8,18 +8,15 @@
 html {
   scroll-behavior: smooth;
 }
-body {
-  background-color: #fff;
-}
 html,
 body {
   height: 100%;
   width: 100%;
+  background-color: #e3e3e3;
 }
 .wrapper {
   height: 100%;
   width: 100%;
-  background-color: #e3e3e3;
   position: relative;
 }
 nav {
@@ -55,52 +52,56 @@ nav {
   font-size: 1.2rem;
   color: white;
 }
-
 main {
   margin-top: 10vh;
-  height: calc(100% - 10vh);
-  display: flex;
-  padding: 3rem;
+  height: 100%;
+  width: 100%;
 }
-.main-left h1 {
+.container {
+  margin: 7rem 0;
+  width: fit-content;
+  transform: translateX(60%);
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.part1,
+.part2 {
+  width: 40rem;
+}
+.part1 h1,
+.part2 h1 {
   font-family: var(--karla);
-  font-size: 3.5rem;
-  margin-bottom: 2rem;
+  font-weight: 800;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }
-.main-left p {
-  font-family: var(--incon);
-  width: 70%;
-  font-size: 1.7rem;
-  margin-bottom: 2rem;
-}
-.btns {
-  display: flex;
-  align-items: center;
-  gap: 1.3rem;
-}
-.login-btn {
-  border: none;
-  background-color: #85a4ca;
-  font-family: var(--incon);
-  font-size: 1.3rem;
-  padding: 0.5rem 2rem;
+.info input,
+.part2 input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid grey;
   border-radius: 0.8rem;
+  margin-bottom: 1rem;
+  font-family: var(--karla);
 }
-.signup-btn {
+.info input:focus,
+.part2 input:focus {
+  outline: none;
+}
+.info button,
+.part2 button {
+  padding: 0.8rem 1rem;
   border: none;
+  border-radius: 0.5rem;
   background-color: #f95959;
-  font-family: var(--incon);
-  font-size: 1.3rem;
-  padding: 0.5rem 2rem;
-  border-radius: 0.8rem;
+  margin-right: 0.5rem;
+  font-family: var(--karla);
+  font-size: 0.8rem;
 }
-.login-btn:hover {
+.info button:hover,
+.part2 button:hover {
   cursor: pointer;
-}
-.signup-btn:hover {
-  cursor: pointer;
-}
-.main-right img {
-  height: 30rem;
-  border-radius: 1.8rem;
 }

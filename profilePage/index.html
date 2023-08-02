@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="profile.css" />
+    <title>Profile</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav>
+        <div class="nav-left">Shopify</div>
+        <div class="nav-right">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../loginPage/index.html">Login</a></li>
+            <li><a href="../signupPage/index.html">Signup</a></li>
+            <li><a href="../cartPage/index.html">MyCart</a></li>
+            <li><a href="#">Profile</a></li>
+          </ul>
+        </div>
+      </nav>
+      <main>
+        <div class="container">
+          <div class="part1">
+            <h1>Profile</h1>
+            <div class="info">
+              <div>
+                <input type="text" class="firstName" placeholder="First Name" />
+              </div>
+              <div>
+                <input type="text" class="lastName" placeholder="Last Name" />
+              </div>
+              <button id="saveBtn">Save Info</button>
+            </div>
+          </div>
+          <div class="part2">
+            <h1>Edit Password</h1>
+            <div>
+              <input
+                type="password"
+                name="oldPassword"
+                id="oldPassword"
+                placeholder="Old Password"
+              />
+            </div>
+            <div>
+              <input
+                type="password"
+                name="newPassword"
+                id="newPassword"
+                placeholder="New Password"
+              />
+            </div>
+            <div>
+              <input
+                type="password"
+                name="confirmPassword"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+              />
+            </div>
+            <button id="changePassword">Change Password</button>
+            <button id="logoutBtn">Log out</button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="profile.js"></script>
+  </body>
+</html>

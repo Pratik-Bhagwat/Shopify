@@ -94,7 +94,7 @@ main {
 }
 .item-content {
   border-radius: 0.8rem;
-  background-color: lightcyan;
+  background-color: #e3f6f5;
   overflow: hidden;
 }
 .item img {
