@@ -1,9 +1,6 @@
 // Retrieve user data from sessionStorage and allUsersData from localStorage
-const userData = JSON.parse(sessionStorage.getItem("loggedInUser"));
-const allUsersData = JSON.parse(localStorage.getItem("usersArray"));
-
-console.log(userData);
-console.log(allUsersData);
+let userData = JSON.parse(sessionStorage.getItem("loggedInUser"));
+let allUsersData = JSON.parse(localStorage.getItem("usersArray")) || []; // Initialize as an empty array if no data is present
 
 // Get references to the input fields and buttons
 const firstName = document.querySelector("#firstName");
@@ -20,8 +17,6 @@ if (userData) {
   lastName.value = userData.lastName;
 }
 
-console.log(firstName.value);
-console.log(lastName.value);
 // Save info button click event handler
 saveInfoBtn.addEventListener("click", () => {
   const newFirstName = firstName.value.trim();
@@ -59,6 +54,7 @@ saveInfoBtn.addEventListener("click", () => {
 
     // Save updated allUsersData to localStorage
     localStorage.setItem("usersArray", JSON.stringify(allUsersData));
+    alert("Your data is successfully saved");
   }
 });
 
@@ -83,6 +79,7 @@ changePasswordBtn.addEventListener("click", () => {
             lastName: currentUserPrevData.lastName,
             email: currentUserPrevData.email,
             password: newPassword.value.trim(),
+            confirmPassword: newPassword.value.trim(),
           };
 
           // Remove the current user's data from allUsersData
@@ -96,8 +93,9 @@ changePasswordBtn.addEventListener("click", () => {
 
           // Save updated allUsersData to localStorage
           localStorage.setItem("usersArray", JSON.stringify(allUsersData));
+          alert("Your password is successfully updated");
         } else {
-          alert("Confirm password does not match with new password");
+          alert("Confirm password does not match with the new password");
         }
       } else {
         alert("Please do not enter the new password as the old password");
