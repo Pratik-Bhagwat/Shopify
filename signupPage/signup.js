@@ -84,6 +84,8 @@ signupBtn.addEventListener("click", (event) => {
             password.value,
             confirmPassword.value
           );
+          alert("User sucessfully signed up");
+          window.location.href = "../loginPage/";
         }
       }
       // this else is for the first time
